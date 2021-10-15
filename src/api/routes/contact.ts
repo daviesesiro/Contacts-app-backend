@@ -55,7 +55,7 @@ export default (app: Router) => {
       try {
         const contacts = await contactService.getUserContacts(req.user!, <string>search);
 
-        return success(res, { code: 200, data: { contacts } });
+        return success(res, { data: { contacts } });
       } catch (err) {
         logger.error("Error: %o", err);
         return next(err);
@@ -78,7 +78,7 @@ export default (app: Router) => {
       try {
         const contact = await contactService.getUserContact(req.user!, contactId);
 
-        return success(res, { code: 200, data: { contact } });
+        return success(res, { data: { contact } });
       } catch (err) {
         logger.error("Error: %o", err);
         return next(err);
@@ -100,7 +100,7 @@ export default (app: Router) => {
       try {
         await contactService.deleteUserContact(req.user!, req.params.contactId);
 
-        return success(res, { code: 201, data: true });
+        return success(res, { data: true });
       } catch (err) {
         logger.error("Error: %o", err);
         return next(err);
