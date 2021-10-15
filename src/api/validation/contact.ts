@@ -5,7 +5,9 @@ export const validateAddContact = () =>
     body: Joi.object({
       name: Joi.string().required(),
       dials: Joi.array()
-        .items(Joi.object({ kind: Joi.string().required(), dial: Joi.string().required() }))
+        .items(
+          Joi.object({ kind: Joi.string().required(), dial: Joi.string().required().allow("") }),
+        )
         .required(),
       email: Joi.string(),
     }),

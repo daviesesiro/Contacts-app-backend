@@ -20,8 +20,8 @@ const Contact = new Schema(
     dials: [
       {
         _id: false,
-        kind: { type: String, required: true },
-        dial: { type: String, required: true },
+        kind: String,
+        dial: String,
       },
     ],
   },
