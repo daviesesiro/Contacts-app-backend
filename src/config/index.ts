@@ -18,8 +18,6 @@ export default {
   jwtSecret: process.env.JWT_SECRET!,
   jwtAlgorithm: process.env.JWT_ALGORITHM!,
   jwtExpiresIn: process.env.JWT_EXPIRES_IN!,
-  refreshJwtSecret: process.env.REFRESH_JWT_SECRET!,
-  refreshJwtExpiresIn: process.env.REFRESH_JWT_EXPIRES_IN!,
 
   logs: {
     level: process.env.LOG_LEVEL || "silly",
